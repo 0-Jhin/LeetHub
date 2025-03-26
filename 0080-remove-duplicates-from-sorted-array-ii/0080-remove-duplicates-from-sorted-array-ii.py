@@ -6,8 +6,9 @@ class Solution(object):
         """
         nS = list(set(nums))
         for i in nS:
-            if(nums.count(i)>2):
-                for j in range((nums.count(i)-2)):
-                    nums.remove(i)
+            nC = nums.count(i)
+            nI = nums.index(i)
+            if(nC>2):
+                del nums[nI+2 : nI+nC]
         k = len(nums)
         return k
